@@ -9,6 +9,7 @@
             Lng <input type="text" id="lng"/><br>
             <p id="no_geo"></p>
             <button type="button" onclick="getLocation()">show me location</button>
+            <button type="button" onclick="getManual()">Manual Near By location</button>
         </p>
         <p id="res"></p>
         <script>
@@ -34,6 +35,13 @@
                     }
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
+}
+
+function getManual(){
+    if($("#lat").val()!="" && $("#lng").val()!=""){
+                            api_call($("#lat").val(),$("#lng").val());
+                    }
+
 }
 var geoError = function(code, message) {
     if($("#lat").val()!="" && $("#lng").val()!=""){

@@ -15,7 +15,7 @@
             var x = document.getElementById("demo");
             function getLocation() {
               if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(showPosition,geoError);
                 
                 
               } else {
@@ -35,6 +35,11 @@
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
 }
+var geoError = function(code, message) {
+    if($("#lat").val()!="" && $("#lng").val()!=""){
+                            api_call($("#lat").val(),$("#lng").val());
+                    }
+};
            function api_call(lat,lon){
 
             $.ajax({

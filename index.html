@@ -38,7 +38,7 @@
            function api_call(lat,lon){
 
             $.ajax({
-        url: "https://pinballmap.com/api/v1/locations/closest_by_lat_lon.json?lat=41.141884&lon=-104.796428",
+        url: "https://pinballmap.com/api/v1/locations/closest_by_lat_lon.json?lat="+lat+"&lon="+lon,
         type: 'GET',
         success: function(res) {
             console.log(res);
